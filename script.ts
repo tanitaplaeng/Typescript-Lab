@@ -47,8 +47,7 @@ function calcAverageProductPrice(products: Product[]) {
     let productsArray = products.length;
     // set total to 0
     let total = 0;
-        // setting new total to total (0) plus price 
-        // loops through whole array to add previous price to next price
+        // loop through entire array to add previous price to next price
     for (const item of products) { 
         total = item.price + total
     }
@@ -76,13 +75,15 @@ inventory = [
 ]
 
 function calcInventoryValue(inventory: InventoryItem[]) { 
-    let inventoryTotal = 0;
-    inventory.forEach(x => { 
-        inventoryTotal += x.price * x.quantity 
-    })
-    // get product price 
-    
-    // get quantity
-    // product price times quantity
-    // return total`
+    // set inventory total to 0
+    let inventoryItems = 0;
+    for (let x = 0; x < inventory.length; x++) { 
+        // look through entire array
+        // inventory item total + product price * quantity
+        inventoryItems += inventory[x].product.price * inventory[x].quantity;
+    }
+    return inventoryItems;
 }
+
+let inventoryTotal = calcInventoryValue(inventory);
+console.log(inventoryTotal);

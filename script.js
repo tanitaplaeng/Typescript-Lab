@@ -39,9 +39,12 @@ inventory = [
     { product: { name: 'LED', price: 1.00 }, quantity: 20 },
 ];
 function calcInventoryValue(inventory) {
-    let inventoryTotal = 0;
-    inventory.forEach(x => {
-        inventoryTotal += x.price * x.quantity;
-    });
+    let inventoryItems = 0;
+    for (let x = 0; x < inventory.length; x++) {
+        inventoryItems += inventory[x].product.price * inventory[x].quantity;
+    }
+    return inventoryItems;
 }
+let inventoryTotal = calcInventoryValue(inventory);
+console.log(inventoryTotal);
 //# sourceMappingURL=script.js.map
