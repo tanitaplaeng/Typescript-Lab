@@ -6,6 +6,13 @@ interface Mountain {
 
 let mountains: Mountain[];
 
+// set to empty array
+// let mountains: Mountain[] = [] ;
+
+// set variable and push
+// const mountain1: Mountain[] = {name: 'Mountain', height: 29};
+// mountains.push(mountain1);
+
 mountains = [
     {name: 'Kilimanjaro', height: 19341},
     {name: 'Everest', height: 29029},
@@ -14,9 +21,9 @@ mountains = [
 
 function findNameOfTallestMountain(mountains: Mountain[]): string { 
     let tallest: Mountain = mountains[0];
-    mountains.forEach(m => { 
-        if (tallest.height < m.height) {
-            tallest = m;
+    mountains.forEach(mtn => { 
+        if (tallest.height < mtn.height) {
+            tallest = mtn;
         }
     });
     return tallest.name;
@@ -69,10 +76,17 @@ interface InventoryItem {
 let inventory: InventoryItem[];
 
 inventory = [
+    // nest
     {product: {name: 'motor',price: 10.00}, quantity: 10},
     {product: {name: 'sensor', price: 12.50}, quantity: 4},
     {product: {name: 'LED', price: 1.00}, quantity: 20},
 ]
+
+// product: value (cmd over over Product)
+// { name: 'string',
+//   price: number,
+// }
+// quantity: value 
 
 function calcInventoryValue(inventory: InventoryItem[]) { 
     // set inventory total to 0
@@ -84,6 +98,12 @@ function calcInventoryValue(inventory: InventoryItem[]) {
     }
     return inventoryItems;
 }
+
+// function calcInventoryValues(inventory: InventoryItem[]) { 
+//     let sum: number = 0
+//     iItems.forEach( i => sum += i.product.price + i.quantity);
+//     return sum;
+// }
 
 let inventoryTotal = calcInventoryValue(inventory);
 console.log(inventoryTotal);
